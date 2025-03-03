@@ -1,29 +1,22 @@
-# my-app
+# Tasks Application
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue application to display,add or remove tasks.
 
-## Recommended IDE Setup
+## Live Link
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Technologies
+ 
+ - Vue
+ - TailwindCSS
+ - Vercel
 
 ## Project Setup
 
-```sh
-npm install
-```
+1. Run dependencies using npm install
+2. Run server using npm run dev
+3. compile and minify for production using npm run build
 
-### Compile and Hot-Reload for Development
+## License
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+This project uses MIT License
