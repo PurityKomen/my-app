@@ -13,6 +13,10 @@ const addTask = () => {
   }
 }
 
+const deleteTask = (index) => {
+  tasks.value.splice(index,1)
+}
+
 const toggleStatus = () => {
   if (status.value === "active") {
     status.value = "pending";
@@ -43,7 +47,10 @@ const toggleStatus = () => {
     <div class="task">
       <h1>Tasks</h1>
       <ul>
-        <li v-for="task in tasks" :key="task">{{ task }}</li>
+        <li v-for="(task,index) in tasks" :key="task">
+          <span> {{ task }} </span> 
+          <button @click="deleteTask(index)">X</button>
+        </li>
       </ul>
     </div>
 
