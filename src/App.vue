@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { ref,onMounted } from "vue";
 
 const name = ref("John Doe");
 const status = ref("active");
-const tasks = ref(["Task One", "Task Two", "Task Three"]);
+const tasks = ref();
 const newTask = ref('')
 
 const addTask = () => {
@@ -26,6 +26,16 @@ const toggleStatus = () => {
     status.value = "active";
   }
 };
+
+onMounted( async () => {
+  try{
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+    const data = await response.json()
+    tasks.value = data.map((task) => task.title)
+  } catch (error){
+    console.log(error)
+  }
+})
 </script>
 
 <template>
