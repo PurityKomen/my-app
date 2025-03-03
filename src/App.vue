@@ -33,14 +33,14 @@ onMounted( async () => {
     const data = await response.json()
     tasks.value = data.map((task) => task.title)
   } catch (error){
-    console.log(error)
+    console.log('error')
   }
 })
 </script>
 
 <template>
   <div class="container">
-    <h1>Hello {{ name }}</h1>
+    <h1 class="text-2xl">Hello, {{ name }}</h1>
 
     <div class="status">
       <p v-if="status === 'active'">User is active</p>
@@ -55,7 +55,7 @@ onMounted( async () => {
     </form>
 
     <div class="task">
-      <h1>Tasks</h1>
+      <h1 class="text-2xl">Tasks</h1>
       <ul>
         <li v-for="(task,index) in tasks" :key="task">
           <span> {{ task }} </span> 
